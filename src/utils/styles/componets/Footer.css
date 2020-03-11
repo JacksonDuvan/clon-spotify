@@ -1,0 +1,27 @@
+.footer{
+    background-color:black;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-img img{
+    width: 140px;
+    position: relative;
+    bottom: 10px;
+}
+
+.footer-list ol{
+    color: #919496;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    cursor: pointer;
+}
+.footer-list ol li:hover{
+    color: #1DB954;
+}

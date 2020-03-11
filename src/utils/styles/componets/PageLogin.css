@@ -1,0 +1,63 @@
+
+.pageLongin{
+    background-image: linear-gradient(rgb(255, 59, 147), #DED643);
+}
+
+.pageLongin-ctn{
+    /* background: url('../../utils/images/hero.png') no-repeat; */
+    background: url('https://svgshare.com/i/6jW.svg') no-repeat;
+    background-position: top -450px center ;
+    /* background-size: 3500px; */
+    background-size: 1650px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pageLongin-ctn h1{
+    color: white;
+    font-weight: 900;
+    font-size: 70px;
+    letter-spacing: -0.04em;
+    margin-top: 100px;
+    font-family: sans-serif;
+}
+
+.pageLongin-ctn h4{
+    color:white;
+    font-weight: bold;
+    letter-spacing: 0.1px;
+    position: relative;
+    bottom: 50px;
+}
+
+.pageLogin-link{
+    background-color: #1DB454;
+    position: relative;
+    bottom: 50px;
+    border: 1px solid transparent;
+    border-radius: 80px;
+    text-decoration: none;
+    color: white;
+    padding: 15px 50px;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
+
+.pageLogin-link:hover{
+    animation: 800ms color;
+    animation-fill-mode: forwards;
+}
+
+@keyframes color{
+    from{
+        background-color: #1DB454;
+    }to{
+        background-color: rgb(16, 221, 91);
+    }
+}
