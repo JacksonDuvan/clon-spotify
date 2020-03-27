@@ -1,5 +1,5 @@
 import React from 'react'
-import '../utils/styles/componets/Register.css'
+import '../assets/styles/componets/Register.css'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 import HeaderInOut from '../components/HeaderInOut'
@@ -19,6 +19,12 @@ class Register extends React.Component {
     }
     handleSubmit = e => {
         e.preventDefault()
+
+        try {
+            this.props.history.push('/webplayer')
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     render(){

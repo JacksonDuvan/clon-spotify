@@ -1,6 +1,6 @@
 import React from 'react'
-import logoSpotify from  '../utils/images/logo-spotify.png'
-import '../utils/styles/componets/Header.css'
+import logoSpotify from  '../assets/images/logo-spotify.png'
+import '../assets/styles/componets/Header.css'
 import { Link } from 'react-router-dom'
 
 const Header = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../utils/styles/componets/Login.css'
+import '../assets/styles/componets/Login.css'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 import HeaderInOut from '../components/HeaderInOut'
@@ -20,6 +20,11 @@ class Login extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault()
+        try {
+            this.props.history.push('/webplayer')      
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     render(){
