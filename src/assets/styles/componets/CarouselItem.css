@@ -1,0 +1,49 @@
+.carousel-item{
+    background-color: #282828;
+    border: 1px solid #282828;
+    border-radius: 10px;
+    width: 190px;
+    height: 260px;
+    margin: -35px 0;
+    position: relative;
+    margin-left: 20px;
+}
+
+.carousel-item__art {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+.carousel-item__art h4{
+    font-size: 12px;
+    text-align: left;
+    margin-left: 20px;
+    position: relative;
+    bottom: 60px;
+}
+
+.carousel-item__art p {
+    font-size: 11px;
+    text-align: left;
+    margin-left: 20px;
+    position: relative;
+    bottom: 70px;
+    color: #b3b3b3;
+}
+
+.play-logo{
+    position: relative;
+    top: 30px;
+    left: 60px;
+    opacity: 0;
+}
+
+
+.carousel-item__art:hover .play-logo{
+    opacity: 1;
+} 
+
+.play-logo:hover{
+    transform: scale(1.1);
+}

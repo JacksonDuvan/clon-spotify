@@ -21,7 +21,7 @@ class Register extends React.Component {
         e.preventDefault()
 
         try {
-            this.props.history.push('/webplayer')
+            this.props.history.push('/login')
         } catch (error) {
             console.log(error)
         }
@@ -42,18 +42,21 @@ class Register extends React.Component {
                             placeholder="Correo electronico" 
                             autoFocus="autofocus" 
                             onChange={this.handleChange}
+                            required
                         />
                         <input 
                             name="text" 
                             type="text" 
                             placeholder="Nombre y Apellido" 
                             onChange={this.handleChange}
+                            required
                         />
                         <input 
                             name="password" 
                             type="password" 
                             placeholder="Contraseña" 
                             onChange={this.handleChange}
+                            required
                         />
                         <div className="register-button">
                             <button className="btn">REGISTRARSE</button>

@@ -38,15 +38,21 @@ class Login extends React.Component {
                     <form className="login-form" onSubmit={this.handleSubmit}>
                         <input 
                             className="login-form__input" 
-                            name="email" type="" 
+                            name="email" 
+                            type="text" 
                             placeholder="Correo electronico o nombre de usuario" 
-                            autoFocus="autofocus" onChange={this.handleChange}
+                            autoFocus="autofocus" 
+                            onChange={this.handleChange}
+                            required
                         />
                         <input 
                             className="login-form__input" 
-                            name="password" type="password" 
+                            name="password" 
+                            type="password" 
                             placeholder="Contraseña" 
-                            onChange={this.handleChange}/>
+                            onChange={this.handleChange}
+                            required
+                        />
                         <div className="login-button">
                         <label>
                             <input type="checkbox"/>Recordarme

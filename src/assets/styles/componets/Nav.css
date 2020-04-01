@@ -5,6 +5,8 @@
     flex-direction: column;
     width: 17%;
     height: 90vh;
+    position: fixed;
+    bottom: 66px;
 }
 
 .nav-img img{
@@ -17,6 +19,12 @@
 .nav-list{
     position: relative;
     bottom: 60px;
+    right: 10px;
+}
+
+.nav-list ol span{
+    position: relative;
+    bottom: 15px;
 }
 
 .nav-list img{
@@ -33,6 +41,12 @@
 }
 
 
+.nav-list ol li svg{
+    margin-right: 10px;
+    padding: 10px 0;
+}
+
+
 .nav-list ol li{
     list-style: none;
     font-size: 14px;
@@ -42,12 +56,13 @@
 .nav-playlist{
     position: relative;
     bottom: 60px;
+
 }
 
 .nav-playlist h2{
     font-size: 12px;
     font-weight: normal;
-    margin-left: 39px;
+    margin-left: 32px;
 }
 
 .nav-playlist a{
@@ -62,13 +77,20 @@
     list-style: none;
     font-size: 14px;
     font-weight: bold;
+    margin-left: -9px;
 }
 
-.hr{
+.nav-playlist ol li {
+    padding: 3px 0;
+}
+
+.hr-nav{
     margin: 8px var(--left-sidebar-padding-right) 8px var(--left-sidebar-padding-left);
     border-color: #282828;
     position: relative;
     bottom: 60px;
+    margin-left: 30px;
+    margin-right: 40px;
 }
 
 .nav-h2 {
@@ -82,6 +104,7 @@
 .nav-h2 a{
     color: #b3b3b3;
     text-decoration: none;
+    margin-left: -9px;
 }
 .nav-h2 a:hover{
     color: white

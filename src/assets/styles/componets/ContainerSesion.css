@@ -1,0 +1,30 @@
+.header-player__sesion{
+    border: 1px solid #282828;
+    border-radius: 5px;
+    position: relative; 
+    top: 5px;
+    right: 60px;
+}
+
+
+.header-player__sesion button{
+    border: none;
+    background-color: #282828;
+    color: #b3b3b3;
+    padding: 0 0 0 20px;
+    width: 200px;
+    height: 40px;
+    text-align: left;
+    outline: white;
+    cursor: pointer;
+}
+
+.header-player__sesion button:hover{
+    background-color: #333333;
+    color: white;
+}
+
+.hr-play{
+    margin: 8px var(--left-sidebar-padding-right) 8px var(--left-sidebar-padding-left);
+    border-color: #282828;
+}

@@ -2,3 +2,9 @@ body{
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
+
+.div{
+    width: 50%;
+    height: 500px;
+    background-color: blue;
+}
