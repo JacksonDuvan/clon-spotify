@@ -1,24 +1,25 @@
 import React from 'react'
 import Nav from '../components/Nav'
 import HeaderPlayer from '../components/HeaderPlayer'
-import MainView from '../components/MainView'
 import Reproductor from '../components/Reproductor'
-import { withRouter } from 'react-router-dom'
+import MainPlaylist from '../components/MainPlaylist'
 
 
 
-class WebPlayer extends React.Component{
+class PlayList extends React.Component{
+
 
     render(){
+        const key = this.props.match.params.id
         return(
             <div className="web-player">
                 <Nav/>
                 <HeaderPlayer />
-                <MainView/> 
+                <MainPlaylist id={key} />    
                 <Reproductor /> 
             </div>               
         )
     }
 }
 
-export default withRouter(WebPlayer)
+export default PlayList

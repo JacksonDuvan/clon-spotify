@@ -4,12 +4,12 @@ import play from '../assets/images/play.png'
 import { Link } from 'react-router-dom'
 
 
-class CarouselItem extends React.Component{
+class CarouselPlayList extends React.Component{
 
     render(){
         const { name, image, id, label } = this.props
         return(
-            <Link to={`/webtracks/${id}`} className="link">
+            <Link to={`/playlist/${id}`} className="link">
                 <div className="carousel-item">
                     <div className="carousel-item__art">
                         <img src={image} width="150px" height="150px" alt=""/>
@@ -25,4 +25,4 @@ class CarouselItem extends React.Component{
 }
 
 
-export default CarouselItem
+export default CarouselPlayList

@@ -8,3 +8,65 @@ body{
     height: 500px;
     background-color: blue;
 }
+
+.btn_b{
+    background-color: #282828;
+    border: none;
+    padding: 5px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 945px;
+    outline: none;
+}
+.btn_b:hover{
+    background-color: #3a3a3a;
+}
+
+.btn_b p{
+    position: relative;
+    bottom: 6px;
+    right: 5px;
+    
+}
+.arrow{
+    width: 5px;
+    height: 5px;
+    top: 50%;
+    margin: -20px 0 0 -20px;
+    transform: rotate(45deg);
+    border-left: none;
+    border-top: none;
+    border-right: 2px #fff solid;
+    border-bottom: 2px #fff solid;
+    position: relative;
+    top: 7px;
+    left: 90px;
+  }
+
+
+.arrow1{
+  width: 5px;
+  height: 5px;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+  transform: rotate(-135deg);
+  border-left: none;
+  border-top: none;
+  border-right: 2px #fff solid;
+  border-bottom: 2px #fff solid;
+  position: relative;
+  top: 10px;
+  left: 90px;
+}
+  
+.link{
+    text-decoration: none;
+}
+  
+  
+  
+  
