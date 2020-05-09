@@ -1,47 +1,75 @@
 /* font-family: Circular, spotify-circular, Helvetica, Arial, sans-serif */
-.header{
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    position: fixed;
+.header {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  z-index: 3;
 }
 
-.header-img img{
-    width: 140px;
+.header-img img {
+  width: 140px;
+  position: relative;
+  bottom: 10px;
+  right: 150px;
+}
+.burger {
+  color: white;
+  position: absolute;
+  bottom: 100px;
+  cursor: pointer;
+  outline-style: none;
+  outline: none;
+}
+@media screen and (max-width: 1000px) {
+  .header-img img {
+    margin-left: 150px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    display: block;
+    text-align: center;
+    background-color: black;
+  }
+  .header-img img {
+    width: 110px;
+    margin-left: 20px;
     position: relative;
-    bottom: 10px;
-    right: 150px;
-}
-
-.header-list{
+    bottom: 20px;
+  }
+  .burger {
+    font-size: 40px;
     color: white;
-}
-.header-list ol{
-    list-style: none;
-    width: 130%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-}
-.header-list a{
-    font-weight: bold;
-    font-size: 15px;
-    color:white;
-    text-decoration: none;
-    letter-spacing: 0;
-}
-.header-list a:hover{
-    color: #1DB954;
+    position: absolute;
+    bottom: 20px;
+    margin-left: 150px;
+    z-index: 50;
+  }
 }
 
-.hr{
-    height: 15px;
-    margin: 0 1px;
+@media screen and (max-width: 360px) {
+  .header {
+    display: block;
+    text-align: center;
+    background-color: black;
+  }
+  .header-img img {
+    width: 110px;
+    margin-left: 20px;
+    position: relative;
+    bottom: 20px;
+  }
+  .burger {
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    margin-left: 150px;
+    z-index: 50;
+  }
 }

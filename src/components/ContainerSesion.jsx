@@ -1,20 +1,29 @@
 import React from 'react'
 import '../assets/styles/componets/ContainerSesion.css'
 import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { logoutSesion } from '../actions/dataActions'
 
-const ContainerSesion = (props) =>{   
+class ContainerSesion extends React.Component{   
 
-        const handleClick = () => {
-            props.history.push('/')
+            handleClick = () => {
+                this.props.logoutSesion(false)
+                this.props.history.push('/')
+            }
+
+        render(){
+            return(
+                <div className="header-player__sesion">
+                    <button>Cuenta </button>
+                    <hr className="hr-play" />
+                    <button onClick={this.handleClick}>Cerrar Sesión</button>
+                </div>
+            )
         }
-
-        return(
-            <div className="header-player__sesion">
-                <button>Cuenta </button>
-                <hr className="hr-play" />
-                <button onClick={handleClick}>Cerrar Sesión</button>
-            </div>
-        )
 }
 
-export default withRouter(ContainerSesion ) 
+const mapDispatchToProps = {
+    logoutSesion
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(ContainerSesion)) 

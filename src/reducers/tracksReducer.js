@@ -39,8 +39,7 @@ const INITIAL_STATE = {
             ]
         },
     },
-    animation: false
-
+    animation: false,
 
 }
 

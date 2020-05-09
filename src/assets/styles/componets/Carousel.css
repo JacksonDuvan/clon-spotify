@@ -1,9 +1,26 @@
-.carousel{
-    margin: 0px 10px;
+.carousel {
+  margin: 0px 10px;
 }
 
-.carousel-div{
+.carousel-div {
+  display: flex;
+  flex-wrap: wrap;
+  /* padding-left: 10px; */
+}
+@media screen and (max-width: 800px) {
+  .carousel-div {
     display: flex;
-    flex-wrap: wrap;
-    /* padding-left: 10px; */
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    padding-top: 40px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .carousel-div {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    padding-top: 40px;
+  }
 }

@@ -1,18 +1,47 @@
-.search{
-   position: relative;
-   right: 400px;
+.search {
+  position: relative;
+  right: 500px;
 }
 
-.search input{
-    width: 350px;
-    height: 40px;
-    border-radius: 100px;
-    border: none;
-    padding-left: 25px;
-    outline: none;
+.search input {
+  width: 200%;
+  height: 40px;
+  border-radius: 100px;
+  border: none;
+  padding-left: 25px;
+  outline: none;
 }
 
-.search input::placeholder{
-    font-size: 14px;
+.search input::placeholder {
+  font-size: 14px;
+}
+@media screen and (max-width: 800px) {
+  .search {
+    position: relative;
+    top: 0;
+    right: 250px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .search {
+    position: relative;
+    top: 50px;
+    right: 90px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .search {
+    position: relative;
+    top: 50px;
+    right: 0;
+  }
+}
 
+@media screen and (max-width: 360px) {
+  .search {
+    position: relative;
+    top: 50px;
+    right: 0;
+    left: 10px;
+  }
 }

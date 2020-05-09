@@ -56,6 +56,8 @@ const INITIAL_STATE = {
 
     search: false,
 
+    sesion: false
+
 
 }
 
@@ -95,6 +97,16 @@ export default (state = INITIAL_STATE, action) => {
             return{
                 ...state,
                 user: action.payload
+            }
+        case 'login_sesion':
+            return {
+                ...state,
+                sesion: action.payload
+            }
+        case 'logout_sesion':
+            return {
+                ...state,
+                sesion: action.payload
             }
 
         default:

@@ -1,112 +1,123 @@
-.nav{
-    background-color: black;
-    color: #b3b3b3;
-    display: flex;
-    flex-direction: column;
-    width: 17%;
-    height: 90vh;
-    position: fixed;
-    bottom: 66px;
+.nav {
+  background-color: black;
+  color: #b3b3b3;
+  display: flex;
+  flex-direction: column;
+  width: 17%;
+  height: 90vh;
+  position: fixed;
+  bottom: 66px;
 }
 
-.nav-img img{
-    width: 140px;
-    position: relative;
-    left: 30px;
-    bottom: 30px;
+.nav-img img {
+  width: 140px;
+  position: relative;
+  left: 30px;
+  bottom: 30px;
 }
 
-.nav-list{
-    position: relative;
-    bottom: 60px;
-    right: 10px;
+.nav-list {
+  position: relative;
+  bottom: 60px;
+  right: 10px;
 }
 
-.nav-list ol span{
-    position: relative;
-    bottom: 15px;
+.nav-list ol span {
+  position: relative;
+  bottom: 15px;
 }
 
-.nav-list img{
-    background-color: white;
-    width: 10px;
+.nav-list img {
+  background-color: white;
+  width: 10px;
 }
 
-.nav-list ol a{
-    text-decoration: none;
-    color: #b3b3b3;
+.nav-list ol a {
+  text-decoration: none;
+  color: #b3b3b3;
 }
-.nav-list ol a:hover{
-    color: white;
-}
-
-
-.nav-list ol li svg{
-    margin-right: 10px;
-    padding: 10px 0;
+.nav-list ol a:hover {
+  color: white;
 }
 
-
-.nav-list ol li{
-    list-style: none;
-    font-size: 14px;
-    font-weight: bold;
+.nav-list ol li svg {
+  margin-right: 10px;
+  padding: 10px 0;
 }
 
-.nav-playlist{
-    position: relative;
-    bottom: 60px;
-
+.nav-list ol li {
+  list-style: none;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-.nav-playlist h2{
-    font-size: 12px;
-    font-weight: normal;
-    margin-left: 32px;
+.nav-playlist {
+  position: relative;
+  bottom: 60px;
 }
 
-.nav-playlist a{
-    text-decoration: none;
-    color: #b3b3b3;
+.nav-playlist h2 {
+  font-size: 12px;
+  font-weight: normal;
+  margin-left: 32px;
 }
-.nav-playlist a:hover{
-    color: white;
+
+.nav-playlist a {
+  text-decoration: none;
+  color: #b3b3b3;
+}
+.nav-playlist a:hover {
+  color: white;
 }
 
 .nav-playlist ol {
-    list-style: none;
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: -9px;
+  list-style: none;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: -9px;
 }
 
 .nav-playlist ol li {
-    padding: 3px 0;
+  padding: 3px 0;
 }
 
-.hr-nav{
-    margin: 8px var(--left-sidebar-padding-right) 8px var(--left-sidebar-padding-left);
-    border-color: #282828;
-    position: relative;
-    bottom: 60px;
-    margin-left: 30px;
-    margin-right: 40px;
+.hr-nav {
+  margin: 8px var(--left-sidebar-padding-right) 8px
+    var(--left-sidebar-padding-left);
+  border-color: #282828;
+  position: relative;
+  bottom: 60px;
+  margin-left: 30px;
+  margin-right: 40px;
 }
 
 .nav-h2 {
-    font-size: 12px;
-    font-weight: normal;
-    position: relative;
-    bottom: 60px;
-    margin-left: 39px;
+  font-size: 12px;
+  font-weight: normal;
+  position: relative;
+  bottom: 60px;
+  margin-left: 39px;
 }
 
-.nav-h2 a{
-    color: #b3b3b3;
-    text-decoration: none;
-    margin-left: -9px;
+.nav-h2 a {
+  color: #b3b3b3;
+  text-decoration: none;
+  margin-left: -9px;
 }
-.nav-h2 a:hover{
-    color: white
+.nav-h2 a:hover {
+  color: white;
+}
+@media screen and (max-width: 800px) {
+  .nav {
+    position: absolute;
+    left: -200px;
+    bottom: 0;
+  }
 }
 
+@media screen and (max-width: 360px) {
+  .nav {
+    position: absolute;
+    left: -180px;
+  }
+}

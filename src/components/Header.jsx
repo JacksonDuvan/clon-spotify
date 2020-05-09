@@ -1,26 +1,32 @@
-import React from 'react'
-import logoSpotify from  '../assets/images/logo-spotify.png'
-import '../assets/styles/componets/Header.css'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import logoSpotify from "../assets/images/logo-spotify.png";
+import "../assets/styles/componets/Header.css";
+import { Link } from "react-router-dom";
+import Menu from "../components/Menu";
 
 const Header = () => {
-    return(
-        <div className="header">
-            <div className="header-img">
-                <Link to="/"> <img src={logoSpotify} alt="logo-spotify"/></Link>
-            </div>
-            <div className="header-list">
-                <ol>
-                    <li><Link to="/">Premium</Link></li>
-                    <li><Link to="/">Ayuda</Link></li>
-                    <li><Link to="/">Descargar</Link></li>
-                    <hr className="hr"/>
-                    <li><Link to="/register">Registrarse</Link></li>
-                    <li><Link to="/login">Iniciar sesión</Link></li>
-                </ol>
-            </div>
-        </div>
-    )
-}
+  const [burger, setBurger] = useState(false);
 
-export default Header
+  return (
+    <div className="header">
+      <div className="header-img">
+        <Link to="/">
+          <img src={logoSpotify} alt="logo-spotify" />
+        </Link>
+      </div>
+
+      {burger ? (
+        <i className="material-icons burger" onClick={() => setBurger(false)}>
+          close
+        </i>
+      ) : (
+        <i className="material-icons burger" onClick={() => setBurger(true)}>
+          dehaze
+        </i>
+      )}
+      <Menu burger={burger} />
+    </div>
+  );
+};
+
+export default Header;
