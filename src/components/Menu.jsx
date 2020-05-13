@@ -4,14 +4,29 @@ import { Link } from "react-router-dom";
 import "../assets/styles/componets/Menu.css";
 import { connect } from "react-redux";
 import { logoutSesion } from "../actions/dataActions";
+import { authorize } from "../services/AuthToken";
 
 const Menu = (props) => {
   const { burger } = props;
 
   const { sesion } = props.dataReducer;
 
-  const handleClick = () => {
+  const logout = () => {
+    const url = "https://www.spotify.com/logout/";
+    const spotifyLogoutWindow = window.open(
+      url,
+      "Spotify Logout",
+      "width=5,height=5,top=0,left=0"
+    );
+    setTimeout(() => spotifyLogoutWindow.close(), 800);
+
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("state");
     props.logoutSesion(false);
+  };
+
+  const login = () => {
+    authorize();
   };
 
   return (
@@ -31,7 +46,7 @@ const Menu = (props) => {
             <hr className="hr" />
             {sesion ? (
               <div className="login-register">
-                <Link to="/" onClick={handleClick}>
+                <Link to="/" onClick={logout}>
                   Cerrar Sesión
                 </Link>
               </div>
@@ -41,7 +56,9 @@ const Menu = (props) => {
                   <Link to="/register">Registrarse</Link>
                 </li>
                 <li>
-                  <Link to="/login">Iniciar sesión</Link>
+                  <Link to="#" onClick={login}>
+                    Iniciar sesión
+                  </Link>
                 </li>
               </div>
             )}
@@ -62,7 +79,7 @@ const Menu = (props) => {
             <hr className="hr" />
             {sesion ? (
               <div>
-                <Link to="/" onClick={handleClick}>
+                <Link to="/" onClick={logout}>
                   Cerrar Sesión
                 </Link>
               </div>
@@ -72,7 +89,9 @@ const Menu = (props) => {
                   <Link to="/register">Registrarse</Link>
                 </li>
                 <li>
-                  <Link to="/login">Iniciar sesión</Link>
+                  <Link to="#" onClick={login}>
+                    Iniciar sesión
+                  </Link>
                 </li>
               </div>
             )}

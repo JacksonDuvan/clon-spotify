@@ -26,6 +26,11 @@
   color: white;
 }
 
+.list-tracks {
+  width: 100%;
+  margin-right: 10px;
+}
+
 @media screen and (max-width: 800px) {
   .main-tracks {
     width: 100%;

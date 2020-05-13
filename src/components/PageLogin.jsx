@@ -2,9 +2,14 @@ import React from "react";
 import "../assets/styles/componets/PageLogin.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { authorize } from "../services/AuthToken";
 
 const PageLogin = (props) => {
   const { sesion } = props.dataReducer;
+
+  const login = () => {
+    authorize();
+  };
 
   return (
     <div className="pageLongin">
@@ -16,7 +21,7 @@ const PageLogin = (props) => {
             ABRIR REPRODUCTOR WEB
           </Link>
         ) : (
-          <Link to="/login" className="pageLogin-link">
+          <Link to="#" className="pageLogin-link" onClick={login}>
             OBTÉN SPOTIFY GRATIS
           </Link>
         )}

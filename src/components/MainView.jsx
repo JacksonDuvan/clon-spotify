@@ -56,8 +56,6 @@ class MainView extends React.Component {
     const {
       user: { display_name },
     } = this.props;
-    // console.log(this.props.isSesion)
-    console.log(this.props.sesion);
 
     if (isSearching) {
       return (
@@ -117,6 +115,7 @@ class MainView extends React.Component {
               )}
             </button>
           </Categories>
+
           <Categories title="Coldplay">
             <Carousel>
               {this.state.isButton

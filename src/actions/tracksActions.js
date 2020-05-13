@@ -1,8 +1,14 @@
 import SpotifyWebApi from "spotify-web-api-js";
+import queryString from "query-string";
 
 const spotifyApi = new SpotifyWebApi();
-const access_token =
-  "BQBZ3lssKF0Y7snZewuJuffnPO1PAkyD5BbxMSyuzNKQ-l-AaPIx4_4aWXiFhMsL8uf3VbepEcsJxCk3XlupEE0NMpzn2Et2YolSdWZmdIgK-Clq4ajSyPz3MVL6OEF2IQXO9icE2n1y7MK_66hJ8henUONQKskkXGfFhHoMHtNKlEwM_lBSNwsAS5d5Dfid2UCpLjq4zn1kxYU32w";
+
+const parsed = queryString.parse(window.location.hash);
+const token = parsed.access_token;
+
+window.localStorage.setItem("access_token", token);
+
+const access_token = window.localStorage.getItem("access_token");
 
 export const getTracks = (id) => (dispatch) => {
   spotifyApi.setAccessToken(access_token);

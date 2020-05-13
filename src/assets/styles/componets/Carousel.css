@@ -7,6 +7,7 @@
   flex-wrap: wrap;
   /* padding-left: 10px; */
 }
+
 @media screen and (max-width: 800px) {
   .carousel-div {
     display: flex;

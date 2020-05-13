@@ -64,6 +64,16 @@ class Reproductor extends React.Component {
             </svg>
           </Link>
 
+          {this.state.isButton ? (
+            <i className="material-icons play-pause" onClick={this.onPlay}>
+              play_circle_outline
+            </i>
+          ) : (
+            <i className="material-icons play-pause" onClick={this.onStop}>
+              pause_circle_outline
+            </i>
+          )}
+
           <Link onClick={this.handleSearch} className="searchButton">
             <svg
               viewBox="0 0 512 512"
@@ -78,16 +88,6 @@ class Reproductor extends React.Component {
               ></path>
             </svg>
           </Link>
-
-          {this.state.isButton ? (
-            <i className="material-icons play-pause" onClick={this.onPlay}>
-              play_circle_outline
-            </i>
-          ) : (
-            <i className="material-icons play-pause" onClick={this.onStop}>
-              pause_circle_outline
-            </i>
-          )}
         </div>
 
         <div className="player">
@@ -99,7 +99,7 @@ class Reproductor extends React.Component {
             onEnter={this.onPlay}
             onExited={this.onStop}
           >
-            <div className="picture "></div>
+            <div className="picture"></div>
           </CSSTransition>
         </div>
 
@@ -134,7 +134,10 @@ class Reproductor extends React.Component {
           onPlay={this.onPlay}
           onPause={this.onStop}
           onFinishedPlaying={() =>
-            this.setState({ playStatus: Sound.status.STOPPED, isButton: true })
+            this.setState({
+              playStatus: Sound.status.STOPPED,
+              isButton: true,
+            })
           }
         />
       </div>
