@@ -2,7 +2,7 @@ import { generateRandomString } from "../services/generateRandomString";
 
 export const authorize = () => {
   let client_id = "7cd459dfc6a94248aa12f166d777a0e2"; // Your client id
-  let redirect_uri = "http://localhost:3000/webplayer/"; // Your redirect uri
+  let redirect_uri = "https://clon-spotify-app.herokuapp.com/webplayer/"; // Your redirect uri
 
   let state = generateRandomString(16);
 
