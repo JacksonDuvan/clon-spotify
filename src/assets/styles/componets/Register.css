@@ -1,83 +1,98 @@
-.hr1{
-    width: 90%;
-} 
+.hr1 {
+  width: 90%;
+}
 
-.register{
-    /* width: 100%; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* padding: 10px; */
+.register {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
 }
-.register-div{
-    border: 1px solid #d9dadc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 50px;
-    width: 500px;
-    padding: 30px;
-    height: 500px;
-    margin: 30px 0;
+.register-div {
+  border: 1px solid #d9dadc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 50px;
+  width: 40.01%;
+  /* width: 500px; */
+  padding: 30px;
+  height: 500px;
+  margin: 30px 0;
 }
-.register-form{
-    display: flex;
-    flex-direction: column;
-    /* margin-bottom: 300px; */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* margin-bottom: 300px; */
 }
-.register-form input{
-    width: 450px;
-    height: 30px;
-    margin: 10px;
-    border: 1px solid #d9dadc;
-    padding-left: 20px;
-    outline-color: black;
-    outline-width: -1px;
-    font-family: 'Montserrat', sans-serif;
-    /* font-weight: bold; */
-    font-size: 15px;
+.register-form input {
+  /* max-width: 450px; */
+  max-width: 100%;
+  height: 30px;
+  margin: 10px;
+  border: 1px solid #d9dadc;
+  padding-left: 20px;
+  outline-color: black;
+  outline-width: -1px;
+  font-family: "Montserrat", sans-serif;
+  /* font-weight: bold; */
+  font-size: 15px;
 }
-.register-form input::placeholder{
-    color: #d9dadc;
-    font-size: 16px;
-    font-weight: bold;
-    /* font-family: 'Montserrat', sans-serif; */
+.register-form input::placeholder {
+  color: #d9dadc;
+  font-size: 16px;
+  font-weight: bold;
+  /* font-family: 'Montserrat', sans-serif; */
 }
-.register-button{
-    width: 95%;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.register-button {
+  width: 95%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register-button label {
+  cursor: pointer;
+}
+.register-button label input {
+  cursor: pointer;
+}
+.btn {
+  background-color: #1db954;
+  border: none;
+  color: white;
+  outline: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #38d36e;
+}
+.register-div a {
+  color: #1db954;
+  text-decoration: none;
+  height: 30px;
+}
+.register-div a:hover {
+  color: #38d36e;
+}
 
+@media screen and (max-width: 800px) {
+  .register-div {
+    width: 60%;
+  }
 }
-.register-button label{
-    cursor: pointer;
-}
-.register-button label input{
-    cursor: pointer;
-}
-.btn{
-    background-color: #1db954;
-    border: none;
-    color: white;
-    outline: none;
-    padding: 15px 40px;
-    border-radius: 50px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    cursor: pointer;
-}
-.btn:hover{
-    background-color: #38d36e;
-}
-.register-div a{
-    color: #1db954;
-    text-decoration: none;
-    height: 30px
-}
-.register-div a:hover{
-    color: #38d36e;
+
+@media screen and (max-width: 450px) {
+  .register-div {
+    width: 70%;
+  }
 }

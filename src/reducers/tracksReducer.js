@@ -1,69 +1,69 @@
 const INITIAL_STATE = {
-
-    album:{
-        name: '',
-        images: [
-            {url: ''}
-        ],
-        tracks: {
-            items: [
-                {name: ''},
-                {duration_ms: ''},
-            ]
-        },
-        artists: [
-            {name: ''}
-        ]
-
-    },
-
+  album: {
+    name: "",
+    images: [{ url: "" }],
     tracks: {
-        preview_url: ''
+      items: [{ name: "" }, { duration_ms: "" }],
     },
+    artists: [{ name: "" }],
+  },
 
-    playlistTracks: {
-        name: '',
-        images: [
-            {url: ''}
-        ],
-        tracks: {
-            items: [
-                {track: {
-                    name: '',
-                  duration_ms: '',
-                  artists: [
-                    {name: ''}
-                  ]
-                }},
-                
-            ]
+  tracks: {
+    preview_url: "",
+  },
+
+  playlistTracks: {
+    name: "",
+    images: [{ url: "" }],
+    tracks: {
+      items: [
+        {
+          track: {
+            name: "",
+            duration_ms: "",
+            artists: [{ name: "" }],
+          },
         },
+      ],
     },
-    animation: false,
-
-}
+  },
+  animation: false,
+  loading: false,
+  error: null,
+};
 
 export default (state = INITIAL_STATE, action) => {
-    switch (action.type) {
-        case 'traer_album':
-            return {
-                ...state,
-                album: action.payload,
-            }    
-    
-        case 'traer_track':
-            return {
-                ...state,
-                tracks: action.payload,
-                animation: true
-            }
-        case 'traer_playlist-tracks':
-            return {
-                ...state,
-                playlistTracks: action.payload
-            }
-    
-        default:
-            return state
-    }
-}
+  switch (action.type) {
+    case "loading":
+      return { ...state, loading: true };
+    case "traer_album":
+      return {
+        ...state,
+        album: action.payload,
+        loading: false,
+      };
+
+    case "traer_track":
+      return {
+        ...state,
+        tracks: action.payload,
+        animation: true,
+        loading: false,
+      };
+    case "traer_playlist-tracks":
+      return {
+        ...state,
+        playlistTracks: action.payload,
+        loading: false,
+      };
+    case "error":
+      return {
+        ...state,
+        error: action.payload,
+        loading: false,
+      };
+
+    default:
+      return state;
+  }
+};

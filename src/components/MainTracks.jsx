@@ -4,10 +4,12 @@ import * as tracksActions from "../actions/tracksActions";
 import "../assets/styles/componets/MainTracks.css";
 import Tracks from "./Tracks";
 import { Link } from "react-router-dom";
+import Loading from "./Loading";
 
 class MainTracks extends React.Component {
   componentDidMount() {
     const id = this.props.id;
+
     this.props.getAlbums(id);
 
     this.handleClick = (id) => {
@@ -23,6 +25,10 @@ class MainTracks extends React.Component {
         tracks: { items },
       },
     } = this.props;
+
+    if (this.props.loading) {
+      return <Loading />;
+    }
 
     return (
       <div className="main-tracks">

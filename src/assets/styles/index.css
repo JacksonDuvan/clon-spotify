@@ -1,45 +1,38 @@
 body {
+  background-color: #181818;
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
 
-/* @media screen and (max-width: 800px) {
-  .btn_b {
-    margin-left: 600px;
-    margin-top: 5px;
-  }
-  .arrow {
-    transform: rotate(-45deg);
-  }
-  .arrow1 {
-    transform: rotate(135deg);
-    top: 8px;
-  }
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
 }
-@media screen and (max-width: 600px) {
-  .btn_b {
-    margin-left: 300px;
-    margin-top: 5px;
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #b3b3b3;
+  border-color: #b3b3b3 transparent #b3b3b3 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-@media screen and (max-width: 450px) {
-  .btn_b {
-    margin-left: 200px;
-    margin-top: 5px;
-  }
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-
-@media screen and (max-width: 360px) {
-  .btn_b {
-    margin-left: 200px;
-    margin-top: 5px;
-  }
-  .arrow {
-    transform: rotate(-45deg);
-  }
-  .arrow1 {
-    transform: rotate(135deg);
-    top: 8px;
-  }
-} */

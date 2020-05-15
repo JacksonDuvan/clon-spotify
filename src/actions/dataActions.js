@@ -10,7 +10,7 @@ window.localStorage.setItem("access_token", token);
 
 const access_token = window.localStorage.getItem("access_token");
 
-export const getMe = () => (dispatch) => {
+export const getMe = () => async (dispatch) => {
   spotifyApi.setAccessToken(access_token);
   spotifyApi
     .getMe()
@@ -21,7 +21,10 @@ export const getMe = () => (dispatch) => {
       });
     })
     .catch((err) => {
-      console.log(err);
+      dispatch({
+        type: "error",
+        payload: err,
+      });
     });
 };
 
@@ -29,15 +32,17 @@ export const artistData = () => (dispatch) => {
   spotifyApi.setAccessToken(access_token);
   spotifyApi
     .getArtistAlbums("4gzpq5DPGxSnKTe4SA8HAU", { limit: 50 })
-    // getArtistTopTracks('1vyhD5VmyZ7KMfW5gqLgo5', 'CO')
     .then((data) => {
       dispatch({
         type: "artist_datos",
         payload: data,
       });
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((err) => {
+      dispatch({
+        type: "error",
+        payload: err,
+      });
     });
 };
 
@@ -57,8 +62,11 @@ export const albumsData = () => (dispatch) => {
         payload: data,
       });
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((err) => {
+      dispatch({
+        type: "error",
+        payload: err,
+      });
     });
 };
 
@@ -71,8 +79,11 @@ export const playlistData = (id) => (dispatch) => {
         payload: data,
       });
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((err) => {
+      dispatch({
+        type: "error",
+        payload: err,
+      });
     });
 };
 
@@ -86,7 +97,10 @@ export const searchAlbums = (e) => (dispatch) => {
       });
     })
     .catch((err) => {
-      console.log(err);
+      dispatch({
+        type: "error",
+        payload: err,
+      });
     });
 };
 

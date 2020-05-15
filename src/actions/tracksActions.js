@@ -12,7 +12,6 @@ const access_token = window.localStorage.getItem("access_token");
 
 export const getTracks = (id) => (dispatch) => {
   spotifyApi.setAccessToken(access_token);
-  console.log(id);
   spotifyApi
     .getTrack(`${id}?market=CO`)
     .then((data) => {
@@ -20,6 +19,11 @@ export const getTracks = (id) => (dispatch) => {
         type: "traer_track",
         payload: data,
       });
+      const cacheList = window.localStorage.getItem("getTracks");
+      if (cacheList) {
+        return JSON.parse(cacheList);
+      }
+      window.localStorage.setItem("getTracks", JSON.stringify(data));
     })
     .catch((error) => {
       console.log(error);
@@ -27,6 +31,9 @@ export const getTracks = (id) => (dispatch) => {
 };
 
 export const getAlbums = (id) => (dispatch) => {
+  dispatch({
+    type: "loading",
+  });
   spotifyApi.setAccessToken(access_token);
   spotifyApi
     .getAlbum(`${id}`)
@@ -35,6 +42,11 @@ export const getAlbums = (id) => (dispatch) => {
         type: "traer_album",
         payload: data,
       });
+      const cacheList = window.localStorage.getItem("getAlbums");
+      if (cacheList) {
+        return JSON.parse(cacheList);
+      }
+      window.localStorage.setItem("getAlbums", JSON.stringify(data));
     })
     .catch((error) => {
       console.log(error);
@@ -42,6 +54,9 @@ export const getAlbums = (id) => (dispatch) => {
 };
 
 export const getPlaylist = (id) => (dispatch) => {
+  dispatch({
+    type: "loading",
+  });
   spotifyApi.setAccessToken(access_token);
   spotifyApi
     .getPlaylist(`${id}`)
@@ -50,6 +65,11 @@ export const getPlaylist = (id) => (dispatch) => {
         type: "traer_playlist-tracks",
         payload: data,
       });
+      const cacheList = window.localStorage.getItem("getPlaylist");
+      if (cacheList) {
+        return JSON.parse(cacheList);
+      }
+      window.localStorage.setItem("getPlaylist", JSON.stringify(data));
     })
     .catch((error) => {
       console.log(error);

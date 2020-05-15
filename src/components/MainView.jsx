@@ -5,6 +5,7 @@ import CarouselItem from "../components/CarouselItem";
 import CarouselPlayList from "../components/CarouselPlayList";
 import { connect } from "react-redux";
 import * as dataActions from "../actions/dataActions";
+import NotFound from "../pages/NotFound";
 
 import "../assets/styles/componets/MainView.css";
 
@@ -56,6 +57,10 @@ class MainView extends React.Component {
     const {
       user: { display_name },
     } = this.props;
+
+    if (this.props.error) {
+      return <NotFound />;
+    }
 
     if (isSearching) {
       return (
