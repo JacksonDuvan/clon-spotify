@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import * as tracksActions from "../actions/tracksActions";
 import "../assets/styles/componets/MainTracks.css";
 import Tracks from "./Tracks";
-import { Link } from "react-router-dom";
 import Loading from "./Loading";
 
 class MainTracks extends React.Component {
@@ -11,15 +10,20 @@ class MainTracks extends React.Component {
     const id = this.props.id;
 
     this.props.getAlbums(id);
-
-    this.handleClick = (id) => {
-      this.props.getTracks(id);
-    };
   }
+
+    
+    handleClick = (id) => {
+      this.props.getTracks(id)
+
+      this.props.Sound('picture1')
+      setTimeout(() => {
+        this.props.Sound('picture')
+      }, 100)
+    };
 
   render() {
     const { album } = this.props;
-    const { id } = this.props.album;
     const {
       album: {
         tracks: { items },
@@ -38,8 +42,7 @@ class MainTracks extends React.Component {
         </div>
         <div className="list-tracks">
           {items.map((item) => (
-            <Link
-              to={`/track/${id}/${item.id}`}
+            <span
               className="track"
               onClick={() => this.handleClick(item.id)}
             >
@@ -50,7 +53,7 @@ class MainTracks extends React.Component {
                 duration={item.duration_ms}
                 artist={album.artists[0].name}
               />
-            </Link>
+            </span>
           ))}
         </div>
       </div>

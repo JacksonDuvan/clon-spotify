@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "../components/Nav";
 import HeaderPlayer from "../components/HeaderPlayer";
-import Reproductor from "../components/Reproductor";
 import MainPlaylist from "../components/MainPlaylist";
 
 class PlayList extends React.Component {
@@ -13,7 +12,6 @@ class PlayList extends React.Component {
         <Nav />
         <HeaderPlayer />
         <MainPlaylist id={key} />
-        <Reproductor />
       </div>
     );
   }

@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import * as tracksActions from "../actions/tracksActions";
 import "../assets/styles/componets/MainTracks.css";
 import Tracks from "./Tracks";
-import { Link } from "react-router-dom";
 import Loading from "./Loading";
 
 class MainPlaylist extends React.Component {
@@ -12,15 +11,18 @@ class MainPlaylist extends React.Component {
 
     this.props.getPlaylist(id);
 
-    this.handleClick = (id) => {
-      this.props.getTracks(id);
-    };
   }
 
+  handleClick = (id) => {
+    this.props.getTracks(id);
+    this.props.Sound('picture1')
+    setTimeout(() => {
+      this.props.Sound('picture')
+    }, 100)
+  };
+
   render() {
-    // console.log(this.props);
     const { playlistTracks } = this.props;
-    const { id } = this.props.playlistTracks;
     const {
       playlistTracks: {
         tracks: { items },
@@ -44,18 +46,18 @@ class MainPlaylist extends React.Component {
         </div>
         <div className="list-tracks">
           {items.map((item) => (
-            <Link
-              to={`/playlist/track/${id}/${item.track.id}`}
+            <span
               className="track"
               onClick={() => this.handleClick(item.track.id)}
             >
               <Tracks
+                key={item.track.id}
                 id={item.track.id}
                 name={item.track.name}
                 duration={item.track.duration_ms}
                 artist={item.track.artists[0].name}
               />
-            </Link>
+            </span>
           ))}
         </div>
       </div>

@@ -70,6 +70,7 @@ class MainView extends React.Component {
               {search.map((album) => {
                 return (
                   <CarouselItem
+                    key={album.id}
                     id={album.id}
                     name={album.name}
                     image={album.images[0].url}
@@ -90,6 +91,7 @@ class MainView extends React.Component {
                 ? itemsUserPlaylist.slice(0, 5).map((user) => {
                     return (
                       <CarouselPlayList
+                        key={user.id}
                         id={user.id}
                         name={user.name}
                         image={user.images[0].url}
@@ -100,6 +102,7 @@ class MainView extends React.Component {
                 : itemsUserPlaylist.map((user) => {
                     return (
                       <CarouselPlayList
+                        key={user.id}
                         id={user.id}
                         name={user.name}
                         image={user.images[0].url}
@@ -127,6 +130,7 @@ class MainView extends React.Component {
                 ? items.slice(0, 5).map((item) => {
                     return (
                       <CarouselItem
+                        key={item.id}
                         id={item.id}
                         name={item.name}
                         image={item.images[0].url}
@@ -137,6 +141,7 @@ class MainView extends React.Component {
                 : items.slice(0, 20).map((item) => {
                     return (
                       <CarouselItem
+                        key={item.id}
                         id={item.id}
                         name={item.name}
                         image={item.images[0].url}
@@ -163,6 +168,7 @@ class MainView extends React.Component {
               {albums.map((album) => {
                 return (
                   <CarouselItem
+                    key={album.id}
                     id={album.id}
                     name={album.name}
                     image={album.images[0].url}

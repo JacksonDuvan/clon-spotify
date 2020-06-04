@@ -51,6 +51,15 @@
   border-color: #b3b3b3;
 }
 
+.picture1 {
+  width: 0;
+  height: 1px;
+  border: 2px solid #b3b3b3;
+  background-color: #b3b3b3;
+  position: relative;
+  bottom: 12px;
+}
+
 .picture {
   width: 0;
   height: 1px;
@@ -69,7 +78,7 @@
   animation-play-state: running;
 }
 .fade-exit {
-  animation: picture 30s linear forwards;
+  animation: picture 30s linear;
   animation-play-state: paused;
 }
 

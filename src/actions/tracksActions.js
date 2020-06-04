@@ -75,3 +75,8 @@ export const getPlaylist = (id) => (dispatch) => {
       console.log(error);
     });
 };
+
+export const Sound = payload => ({
+  type: 'sound',
+  payload
+})

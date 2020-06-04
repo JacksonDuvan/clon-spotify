@@ -1,7 +1,6 @@
 import React from 'react'
 import Nav from '../components/Nav'
 import HeaderPlayer from '../components/HeaderPlayer'
-import Reproductor from '../components/Reproductor'
 import MainTracks from '../components/MainTracks'
 
 
@@ -16,7 +15,6 @@ class WebTracks extends React.Component{
                 <Nav/>
                 <HeaderPlayer />
                 <MainTracks id={id} />    
-                <Reproductor /> 
             </div>               
         )
     }

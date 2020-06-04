@@ -22,8 +22,7 @@
 }
 
 .track {
-  text-decoration: none;
-  color: white;
+  cursor: pointer;
 }
 
 .list-tracks {

@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
   album: {
+    id: "",
     name: "",
     images: [{ url: "" }],
     tracks: {
@@ -30,6 +31,7 @@ const INITIAL_STATE = {
   animation: false,
   loading: false,
   error: null,
+  sound: '',
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -62,6 +64,11 @@ export default (state = INITIAL_STATE, action) => {
         error: action.payload,
         loading: false,
       };
+    case 'sound':
+      return{
+        ...state,
+        sound: action.payload
+      }
 
     default:
       return state;

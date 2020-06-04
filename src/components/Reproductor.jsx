@@ -44,11 +44,12 @@ class Reproductor extends React.Component {
 
   render() {
     const { preview_url } = this.props.tracksReducer.tracks;
-
     let { volume } = this.state;
+    const { sound } = this.props.tracksReducer
 
-    return (
+    return(
       <div className="reproductor">
+
         <div className="movil">
           <Link to="/webplayer" className="home">
             <svg
@@ -74,7 +75,7 @@ class Reproductor extends React.Component {
             </i>
           )}
 
-          <Link onClick={this.handleSearch} className="searchButton">
+          <Link to='/webplayer' onClick={this.handleSearch} className="searchButton">
             <svg
               viewBox="0 0 512 512"
               width="40"
@@ -90,7 +91,7 @@ class Reproductor extends React.Component {
           </Link>
         </div>
 
-        <div className="player">
+        <div className="player" onMouseDown={this.onMouseDown}>
           <hr />
           <CSSTransition
             in={this.state.isAnimated}
@@ -99,7 +100,7 @@ class Reproductor extends React.Component {
             onEnter={this.onPlay}
             onExited={this.onStop}
           >
-            <div className="picture"></div>
+            <div className={sound}></div>
           </CSSTransition>
         </div>
 
@@ -125,21 +126,15 @@ class Reproductor extends React.Component {
             volume_up
           </i>
         </div>
-
-        <Sound
+          <Sound
           url={preview_url}
           playStatus={this.state.playStatus}
           volume={volume}
-          onLoading={() => this.setState({ isButton: false, isAnimated: true })}
+          onPlaying={() => this.setState({ isButton: false, isAnimated: true })}
           onPlay={this.onPlay}
           onPause={this.onStop}
-          onFinishedPlaying={() =>
-            this.setState({
-              playStatus: Sound.status.STOPPED,
-              isButton: true,
-            })
-          }
-        />
+          onLoading={() => this.setState({ isButton: true, isAnimated: false})}
+        /> 
       </div>
     );
   }
